@@ -1,10 +1,12 @@
 <template>
   <nav class="navigation-links-nav" v-bind:class="rootClassName">
-    <span class="navigation-links-text">{{ text }}</span>
-    <span class="navigation-links-text1">{{ text1 }}</span>
-    <span class="navigation-links-text2">{{ text2 }}</span>
-    <span class="navigation-links-text3">{{ text3 }}</span>
-    <span class="navigation-links-text4">{{ text4 }}</span>
+    <nuxt-link to="/about" class="navigation-links-navlink">{{ text }}</nuxt-link>
+    <nuxt-link to="/post" class="navigation-links-navlink1">
+      {{ text1 }}
+    </nuxt-link>
+    <nuxt-link to="/contact" class="navigation-links-navlink2">
+      {{ text4 }}
+    </nuxt-link>
   </nav>
 </template>
 
@@ -19,7 +21,7 @@ export default {
     rootClassName: String,
     text4: {
       type: String,
-      default: 'Blog',
+      default: 'Contacto',
     },
     text3: {
       type: String,
@@ -27,11 +29,11 @@ export default {
     },
     text1: {
       type: String,
-      default: 'Features',
+      default: 'Artículo',
     },
     text: {
       type: String,
-      default: 'Sobre',
+      default: 'Sobre nosotros',
     },
   },
 }
@@ -44,18 +46,23 @@ export default {
   align-items: center;
   flex-direction: row;
 }
-.navigation-links-text1 {
-  margin-left: var(--dl-space-space-twounits);
+.navigation-links-navlink {
+  text-decoration: none;
 }
-.navigation-links-text2 {
+.navigation-links-navlink1 {
   margin-left: var(--dl-space-space-twounits);
+  text-decoration: none;
 }
-.navigation-links-text3 {
+.navigation-links-navlink2 {
   margin-left: var(--dl-space-space-twounits);
+  text-decoration: none;
 }
-.navigation-links-text4 {
-  margin-left: var(--dl-space-space-twounits);
-}
+
+
+
+
+
+
 
 
 
@@ -69,22 +76,14 @@ export default {
     align-items: flex-start;
     flex-direction: column;
   }
-  .navigation-links-text {
+  .navigation-links-navlink {
     margin-bottom: var(--dl-space-space-unit);
   }
-  .navigation-links-text1 {
+  .navigation-links-navlink1 {
     margin-left: 0;
     margin-bottom: var(--dl-space-space-unit);
   }
-  .navigation-links-text2 {
-    margin-left: 0;
-    margin-bottom: var(--dl-space-space-unit);
-  }
-  .navigation-links-text3 {
-    margin-left: 0;
-    margin-bottom: var(--dl-space-space-unit);
-  }
-  .navigation-links-text4 {
+  .navigation-links-navlink2 {
     margin-left: 0;
     margin-bottom: var(--dl-space-space-unit);
   }
